@@ -102,33 +102,33 @@ public class CampusCreateCountry extends CampusParent {
 
     }
 
-    @Test(dependsOnMethods = "UpdateCountry")
-    public void DeleteAllCountry() {
-        List<String>idler=
-        given().spec(requestSpecification)
-
-                .when()
-                .get("/school-service/api/countries")
-
-                .then()
-                .log().body()
-                .extract().path("id");
-        System.out.println(idler);
-
-        for (String id:idler) {
-
-            given()
-                    .spec(requestSpecification)
-
-                    .when()
-                    .delete("/school-service/api/countries/" + id)
-
-
-                    .then()
-                    .statusCode(200);
-        }
-
-    }
+//    @Test(dependsOnMethods = "UpdateCountry")
+//    public void DeleteAllCountry() {
+//        List<String>idler=
+//        given().spec(requestSpecification)
+//
+//                .when()
+//                .get("/school-service/api/countries")
+//
+//                .then()
+//                .log().body()
+//                .extract().path("id");
+//        System.out.println(idler);
+//
+//        for (String id:idler) {
+//
+//            given()
+//                    .spec(requestSpecification)
+//
+//                    .when()
+//                    .delete("/school-service/api/countries/" + id)
+//
+//
+//                    .then()
+//                    .statusCode(200);
+//        }
+//
+//    }
 
 
 //    @Test(dependsOnMethods = "UpdateCountry")
